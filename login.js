@@ -6,7 +6,7 @@ const fs = require('fs');
 var readline = require('readline');
 const trigger = (arr) => {
   NS1.set_api_url(process.env.NSONE_DEV_URL);
-  NS1.set_api_key(null, null);
+  NS1.set_api_key(null);
   const data={
     username: arr[0],
     password: arr[1]

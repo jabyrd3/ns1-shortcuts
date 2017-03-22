@@ -1,5 +1,5 @@
 {
-  "name": "lazy-cli-hackers-guide-to-nsone",
+  "name": "ns1-shortcuts",
   "version": "0.0.1",
   "description": "quick and dirty pile of scripts for populate zones, records, and accounts",
   "main": "login.js",
@@ -10,6 +10,7 @@
     "nsca": "./createAccount.js",
     "nsl": "./login.js",
     "nscz": "./createZone.js",
+    "nsczs": "./createZones.js",
     "nscr": "./createRecords.js"
   },
   "author": "jordan byrd",
