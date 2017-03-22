@@ -20,13 +20,21 @@ ns1 createZone: This takes one argument, even when using a pipe (hacky, i know).
 ns1 createRecords: this accepts either 1 argument (zone name) or stdin (zone name). It creates 49 records at the zone name you pass it. 
 
 # individual examples
-```nsca <username> <password>
-> <username> \n
+```
+shell> nsca <username> <password>
+  <username> \n
   <password> \n
-  <apikey> \n```
-```login <username> <password>```
-```nscz foobar.baz```
-```nscr foobar.baz```
+  <apikey> \n
+```
+```
+shell> login <username> <password>
+```
+```
+shell> nscz foobar.baz
+```
+```
+shell> nscr foobar.baz
+```
 
 # installation
 - clone the directory
