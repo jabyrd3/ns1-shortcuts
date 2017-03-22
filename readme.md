@@ -1,5 +1,5 @@
 # ns1 dev shortcuts
-This is a set of utility scripts i've been using to make development easier. They behave like unix commands, each one accepts either args or stdin so you can pipe output to the next command. These are hardcoded only ever to execute against http://portal.dev.nsone.co.
+This is a set of utility scripts i've been using to make development easier. They behave like unix commands, each one accepts either args or stdin so you can pipe output to the next command. The API url is set by environment variable (NSONE_DEV_URL), so you can use these against any instance of the API, provided you have an API key with permissions to create users.
 
 # big example
 `nsca someUser somePassword | nsl && nscz foo.bar.baz | nscr`
@@ -45,6 +45,7 @@ shell> nscr foobar.baz
 # prereqs
 - node.js 6-ish
 - set `$NSONE_DEV_KEY` to the master key for the local dev envs for account creation; this is the only time its used.
+- set `$NSONE_DEV_URL` to the url of the environment you're trying to reach (ie: http://portal.dev.nsone.co)
 
 # todo
 - [ ] standardize .cache_api_key_ns1_dev location
