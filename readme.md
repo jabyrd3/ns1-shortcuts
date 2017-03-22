@@ -16,6 +16,9 @@ ns1 login: you can pipe stdout from nsca to this and it will use the key from th
 ## nscz
 ns1 createZone: This takes one argument, even when using a pipe (hacky, i know). When you pass this zone name as an arg, it creates a zone. stdout for this is `${apikey}\n${zoneName}`.
 
+## nscz
+ns1 createZones: creates 50 zones with the 1 argument as zone suffix (0..50.foobar.com)
+
 ## nscr
 ns1 createRecords: this accepts either 1 argument (zone name) or stdin (zone name). It creates 49 records at the zone name you pass it. 
 
