@@ -1,0 +1,22 @@
+{
+  "name": "lazy-cli-hackers-guide-to-nsone",
+  "version": "0.0.1",
+  "description": "quick and dirty pile of scripts for populate zones, records, and accounts",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "nsca": "./createAccount.js",
+    "nsl": "./login.js",
+    "nscz": "./createZone.js",
+    "nscr": "./createRecords.js"
+  },
+  "author": "jordan byrd",
+  "license": "ISC",
+  "dependencies": {
+    "epipebomb": "^1.0.0",
+    "ns1": "^0.1.11",
+    "readline": "^1.3.0"
+  }
+}
