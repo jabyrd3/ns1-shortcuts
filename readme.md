@@ -1,5 +1,5 @@
 # ns1 dev shortcuts
-This is a set of utility scripts i've been using to make development easier. They behave like unix commands, each one accepts either args or stdin so you can pipe output to the next command. The API url is set by environment variable (NSONE_DEV_URL), so you can use these against any instance of the API, provided you have an API key with permissions to create users.
+This is a set of utility scripts i've been using to make development easier. They behave like unix commands, each one accepts either args or stdin so you can pipe output to the next command. The API url is set by environment variable (NSONE_DEV_URL), so you can use these against any instance of the API, provided you have an API key with permissions to create users. You need to set the env var NSONE_DEV_KEY to that key. 
 
 # big example
 `nsca someUser somePassword | nsl && nscz foo.bar.baz | nscr`
@@ -51,7 +51,8 @@ shell> nscr foobar.baz
 - set `$NSONE_DEV_URL` to the url of the environment you're trying to reach (ie: http://portal.dev.nsone.co)
 
 # todo
-- [ ] standardize .cache_api_key_ns1_dev location
+- [ ] config file
+- [ ] standardize .cache_api_key_ns1_dev location, make configurable
 - [ ] fix login && vs | garbage
 - [ ] add more actions
 - [ ] test suite

@@ -9,7 +9,7 @@ const data = {
         'username': process.argv[2],
         'password': process.argv[3],
         'plan': {
-            'type': 'startup',
+            'type': 'pro',
             'period': 'monthly'
         },
         'contact': {
