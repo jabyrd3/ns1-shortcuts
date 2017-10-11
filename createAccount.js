@@ -9,7 +9,7 @@ const data = {
         'username': process.argv[2],
         'password': process.argv[3],
         'plan': {
-            'type': 'pro',
+            'type': 'basic',
             'period': 'monthly'
         },
         'contact': {
@@ -20,7 +20,7 @@ const data = {
                 'street': '16 beaver street',
                 'state': 'NY'
             },
-            'email': `${this.username}@nsone.net`,
+            'email': `${process.argv[2]}@nsone.net`,
             'firstname': 'jordan',
             'lastname': 'byrd',
             'phone': '15857484523'
