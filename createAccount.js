@@ -1,15 +1,17 @@
 #! /usr/bin/env node
 let NS1 = require('ns1');
+let fs = require('fs');
 require('epipebomb')();
 // creates an account from 2 args and writes
 // username and password to stdout on success.
+ console.log(process.env.NSONE_DEV_URL);
 NS1.set_api_url(process.env.NSONE_DEV_URL);
 NS1.set_api_key(process.env.NSONE_DEV_KEY, null);
 const data = {
         'username': process.argv[2],
         'password': process.argv[3],
         'plan': {
-            'type': 'pro',
+            'type': 'advanced',
             'period': 'monthly'
         },
         'contact': {
@@ -45,10 +47,20 @@ const data = {
     };
 new NS1.NS1Request('put', '/account/signup', data)
   .then(res=>{
-    process.stdout.write(`${data.username}\n${data.password}\n${res.key}`);
+    console.log(res)
+    NS1.set_api_key(res.key, null);
+    NS1.Account.ApiKey
+        .create({name: 'TSDB shim', permissions: {dns: {view_zones: true}}})
+        .then((keyRes)=>{
+            fs.writeFileSync('.ns1shimkey', keyRes.attributes.key);
+            console.log('remember to source .ns1shimkey as env var contents for using mock tsdb!');
+            process.stdout.write(`${data.username}\n${data.password}\n${res.key}\n`);
+        }).catch(e=>{
+            console.log('failed out creating apikey for mock tsdb', e);
+        })
   })
-  .catch(()=>{
-    // console.log('nsl:', err);
+  .catch((err)=>{
+    console.log('nsl:', err);
     process.exit(2);
   });
 
